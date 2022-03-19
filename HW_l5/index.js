@@ -90,7 +90,8 @@
 
 // console.log(isNumberInRange(3));
 
-// // #9
+// // #9  Дан массив с числами. Запишите в новый массив только те числа, которые больше нуля и меньше 10-ти. Для этого используйте вспомогательную функцию isNumberInRange из предыдущей задачи.
+
 // let myArr = [1,2,10,15,5];
 
 // const sortArrByRange = (arr) =>{
@@ -105,7 +106,8 @@
 
 // console.log(sortArrByRange(myArr));
 
-// #10
+// #10  Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.
+
 // const getDigitsSum = (num) => {
 //   let str = num.toString();
 //   let sum = 0;
@@ -117,7 +119,8 @@
 
 // console.log(getDigitsSum(1936));
 
-// // #11
+// // #11  Найдите все года от 1 до 2020, сумма цифр которых равна 13. Для этого используйте вспомогательную функцию getDigitsSum из предыдущей задачи.
+
 // const sumEqual13 = () => {
 //   let result = [];
 //   for (let i = 1; i <= 2020; i++) {
@@ -130,14 +133,16 @@
 
 // console.log(sumEqual13());
 
-// #12
+// #12  Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
+
 // const isEven = (num) => {
 //   return num % 2 === 0;
 // };
 
 // console.log(isEven(-2));
 
-// #13
+// #13 Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+
 // let myArr = [1, 3, 6, 9, 10, -2, -5];
 
 // const sortArrByEven = (arr) => {
@@ -152,10 +157,11 @@
 
 // console.log(sortArrByEven(myArr));
 
-// #14
+// #14  Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число).
+
 // const getDivisors = (num) => {
 //   let result = [];
-//   for (let i = 1; i <= num / 2; i++) {
+//   for (let i = 1; i <= num; i++) {
 //     if (num % i === 0) {
 //       result.push(i);
 //     }
@@ -165,9 +171,40 @@
 
 // console.log(getDivisors(36));
 
-// #15
+// #15 Дано число. Сложите его цифры. Если сумма получилась более 9-ти, опять сложите его цифры. И так, пока сумма не станет однозначным числом (9 и менее).
+
+const myFunc = (number) => {
+  const myNumber = number.toString();
+  let myValue = 0;
+  for (let i = 0; i < myNumber.length; i++) {
+    myValue += +myNumber[i];
+  }
+  return myValue <= 9 ? myValue : myFunc(myValue);
+};
+
+console.log(myFunc(123123));
 
 
+// решение преподавателя
+
+// const countRecJobs = (num) => {
+//   let countRec = 0;
+
+//   const testRecursion = (num) => {
+//     const digitsSum = getDigitsSum(num);
+
+//     if (digitsSum > 9) {
+//       countRec += 1;
+//       testRecursion(num - 1);
+//       return Рекурсия отработала: ${countRec}. ${digitsSum};
+//     }
+//     return digitsSum;
+//   };
+
+//   return testRecursion(num);
+// };
+
+// console.log(countRecJobs(269949));
 
 // #16
 const myStr = "abcabc";
