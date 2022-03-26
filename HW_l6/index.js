@@ -200,15 +200,72 @@
 
 // #18 Напишите функцию limitStr(str, n, symb), которая обрезает строку, если она длиннее указанного количества символов n. Усеченная строка должна заканчиваться троеточием «...» (если не задан параметр symb) или заданным символом symb.
 
-const myString = "I learn JS";
+// const myString = "I learn JS";
 
-const limitStr = (str, n, symb) => {
-  if (str.length > n) {
-    return symb === undefined || symb === ""
-      ? str.slice(0, n-3) + "..."
-      : str.slice(0, n-symb.length) + symb;
-  }
-  return str;
-};
+// const limitStr = (str, n, symb) => {
+//   if (str.length > n) {
+//     return symb === undefined || symb === ""
+//       ? str.slice(0, n-3) + "..."
+//       : str.slice(0, n-symb.length) + symb;
+//   }
+//   return str;
+// };
 
-console.log(limitStr(myString, 8, '!'));
+// console.log(limitStr(myString, 8, '!'));
+
+// #19 Напишите функцию count(str, stringsearch), которая возвращает количество символов stringsearch в строке str.
+
+// const myString = "abcabcaa";
+
+// const count = (str, stringsearch) => {
+//   let result = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === stringsearch) {
+//       result += 1;
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(count(myString, "d"));
+
+// #20 Напишите функцию strip(str), которая удаляет все лишние пробелы из строки str.
+
+// const myString = '  строка  с       пробелами ';
+
+// const strip = (str) =>{
+// return str.trim().replace(/\s+/g,' ' )
+// }
+
+// console.log(strip(myString));
+
+// #21 Напишите функцию cutString(str, n), которая удаляет лишние слова из строки str, оставив в ней n слов.
+
+// const myString = "This is a very long text string";
+
+// const cutString = (str, n) => {
+//   let arrFromStr = str.split(" ");
+//   let result = "";
+//   for (let i = 0; i < n; i++) {
+//     result += ` ${arrFromStr[i]}`;
+//   }
+//   return result.trim();
+// };
+
+// console.log(cutString(myString, 4));
+
+// #22 Напишите функцию findWord(word, str), которая проверяет, существует ли в строке str слова word.
+
+const myString = 'поиск слова в строке';
+
+const findWord = (word, str) =>{
+   let arrFromStr = str.split(' ');
+   for(let i=0;i<arrFromStr.length;i++){
+       if(arrFromStr[i] === word){
+           return true;
+       }
+   }
+    return false;
+}
+
+console.log(findWord('слов', myString));
