@@ -101,9 +101,46 @@
 
     // forEach
 
-    const users = [
-        { id: 1, name: "Vasya", isAdmin: false },
-        { id: 2, name: "Petya", isAdmin: false },
-        { id: 3, name: "Lena", isAdmin: true },
-        { id: 4, name: "Olga", isAdmin: false },
-      ];
+    // const users = [
+    //     { id: 1, name: "Vasya", isAdmin: false },
+    //     { id: 2, name: "Petya", isAdmin: false },
+    //     { id: 3, name: "Lena", isAdmin: true },
+    //     { id: 4, name: "Olga", isAdmin: false },
+    //   ];
+
+    // копирование объектов
+
+    // let myVar = 1;
+    // let myVar2 = myVar;
+
+    // myVar2 = 5;
+
+    // const myObject1 = {name: 'Vasya'};
+    // const myObject2 = myObject1;
+
+    // myObject2.name = 'Petya';
+
+    // console.log(myObject1, myObject2);
+
+    // const myObject1 = {name: 'Vasya'};
+    // // const myObject2 = Object.assign(myObject1);
+    // const myObject2 = { ...myObject1};
+
+    // myObject2.name = 'Petya';
+
+    // console.log(myObject1, myObject2)
+
+    // задачи слайд №31
+// Написать функцию  которая будет принимать n-ое количество аргументов, в качестве результата 
+// функция будет возвращать сумму всех четных элементов. Для решения использовать цикл for (... of …).
+
+const countArgsSum = (...args) =>{
+  let result = 0;
+
+  for(let arg of args){
+    if(arg %2 === 0){
+      result+=arg;
+    }
+  }
+  return result;
+}
